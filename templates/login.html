@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <form method="POST" action="">
+        <div id="login-box">
+            <h1>login</h1>
+            <div class="form">
+                <div class="em" id="em">
+                {% if msg %}
+                        <span style="color: #ffffff">{{ msg }}</span>
+                {% endif %}
+                </div>
+                <div class="item">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <input type="text" placeholder="username" name="username">
+                </div>
+                <div class="item">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    <input type="password" placeholder="password" name="password">
+                </div>
+            </div>
+            <button>login</button>
+        </div>
+    </form>
+</body>
+<script>
+    var em = document.getElementById('em');
+    if(em.style.display==''){
+        setTimeout(function (){
+            em.style.display = 'none';
+        },3000)
+    }
+</script>
+</html>

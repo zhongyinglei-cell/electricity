@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>充值</title>
+</head>
+<style>
+    .cz {
+        width: 200px;
+        padding:8px;
+        background-color: #428bca;
+        border-color: #357ebd;
+        color: #fff;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size:125%
+      }
+    body{
+        background: url("/static/img/timg_chongzhi.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+</style>
+{% extends 'index.html' %}
+{% block content %}
+<body>
+    <div class="yincang">
+        <button class="cz" id="chongzhi" style="margin-left: 42%">CYY小朋友随便点</button> <span style="color: yellow">#其余人靠边点一次够了</span>
+    </div>
+<script src="/static/JS/jquery-1.11.0.min.js"></script></body>
+<script>
+    var time = "{{ time }}";
+    var t = 1
+    $('.cz').click(function (){
+        if(time!='0' || "{{ user.username}}" == 'chengyuanyan') {
+            alert('充值次数成功')
+            window.location.reload()
+            $.ajax({
+                url: '',
+                type: 'POST',
+                async: 'true',
+                dataType: 'json',
+                data: JSON.stringify({
+                    count: 10
+                }),
+                success:function (data){
+                    alert(data)
+                }
+            })
+        }
+        else {
+            alert('有点自知之明吧,你又不是CYY！')
+        }
+    })
+</script>
+</html>
+{% endblock %}

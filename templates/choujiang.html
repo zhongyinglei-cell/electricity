@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/static/css/choujiang.css">
+<style>
+    body{
+        background: url("/static/img/timg_choujiang.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+</style>
+{% extends 'index.html' %}
+{% block content %}
+<body>
+<span style="margin-left: 43%;color: aqua">抽奖次数：{{ count }}次</span>  <span class="sx" style="color: #ffb301;cursor: pointer">刷新</span> <span class="cz" style="color: #db3125;cursor: pointer">请充值</span>
+<div class="fo3-cj">
+            <div class="cjbg">
+                <div class="f3-icon1">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon1.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">世界传奇球员包（9强）*1</p>
+                </div>
+                <div class="f3-icon2">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon2.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">世界传奇90以上能力值球员包（8强）*1</p>
+                </div>
+                <div class="f3-icon3">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon3.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">CC赛季BEST100球员包（8-9强）*1</p>
+                </div>
+                <div class="f3-icon4">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon4.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">19世界传奇全员球员包（5~8强）*1</p>
+                </div>
+                <div class="f3-icon5">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon5.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">欧洲混合传奇球员包（5~8强）*1</p>
+                </div>
+                <div class="f3-icon6">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon6.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">足坛大师6-8强*1</p>
+                </div>
+                <div class="f3-icon7">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon7.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">HOT赛季BEST100球员包（7~9强）*1</p>
+                </div>
+                <div class="f3-icon8">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon8.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">TC赛季BEST100球员包（6~10强）*1</p>
+                </div>
+                <div class="f3-icon9">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon9.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">TT赛季50名指定球员包（7强）*1</p>
+                </div>
+                <div class="f3-icon10">
+                    <img src="//game.gtimg.cn/images/fo4/cp/a20161102club/fo3-lottery-icon10.png" width="154" height="79" alt="" class="pic">
+                    <p class="txt">世界最佳球员包（6-8强）*1</p>
+                </div>
+
+                <div class="cj-btn">
+                    <p class="costScore cj-txt">消耗5000积分</p>
+                    <button class="new-cj1" id="new1" title="幸运抽一抽">幸运抽一抽</button>
+                    <button class="new-cj2" id="new2" title="幸运十连抽">幸运十连抽</button>
+                </div>
+            </div>
+    {% csrf_token %}
+</div>
+    <script src="/static/JS/jquery-1.11.0.min.js"></script>
+{#    <script src="/static/JS/choujiang.js"></script>#}
+{#<script src="/static/JS/jquery-1.11.0.min.js"></script>#}
+</body>
+
+<script>
+    {#var cj1 = document.getElementById('new1')#}
+    {#var cj2 = document.getElementById('new2')#}
+    {#var te = document.getElementsByClassName('txt');#}
+    var li = []
+    var st = ''
+    var count = {{ count }}
+    $('.new-cj1').click(function () {
+        window.location.reload()
+        if(count>0) {
+            li.push($('.txt')[Math.floor(Math.random() * 10)])
+            alert('获得:' + li[li.length - 1].innerHTML)
+            $.ajax({
+                {#            {#url:'{% url "choujiang" %}',#}
+                url: '',
+                type: 'POST',
+                async: 'true',
+                dataType: 'json',
+                data: JSON.stringify({
+                    'JP': li[li.length - 1].innerHTML
+                }),
+            })
+        }
+        else {
+            alert('次数不足请充值')
+        }
+    })
+    $('.new-cj2').click(function (){
+        window.location.reload()
+        if (count>10) {
+            for (var i = 0; i < 10; i++) {
+                st = $('.txt')[Math.floor(Math.random() * 10)].innerHTML + ',' + st
+            }
+            st = st.substring(0, st.lastIndexOf(','));
+            alert(st)
+            $.ajax({
+                {#            {#url:'{% url "choujiang" %}',#}
+                url: '',
+                type: 'POST',
+                async: 'true',
+                dataType: 'json',
+                data: JSON.stringify({
+                    'JP': st
+                })
+            })
+            st = ''
+        }
+        else {
+            alert('次数不足请充值')
+        }
+    })
+    $('.sx').click(function (){
+        window.location.reload()
+    })
+    $('.cz').click(function (){
+        window.location.href= '/chongzhi/'
+    })
+</script>
+</html>
+{% endblock %}

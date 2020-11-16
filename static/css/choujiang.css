@@ -1,0 +1,136 @@
+.fo3-cj{
+    width: 628px;
+    height: 453px;
+    margin: 0 auto
+}
+
+.fo3-cj .cjbg{
+        background: url(//game.gtimg.cn/images/fo4/cp/a20161102club/newcjbg.png) no-repeat;
+    width: 628px;
+    height: 453px;
+    position: relative;
+}
+
+.fo3-cj .cjbg .f3-icon1{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+.fo3-cj .cjbg .f3-icon2{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 30px;
+    left: 158px;
+}
+.fo3-cj .cjbg .f3-icon3{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 30px;
+    left: 316px;
+}
+.fo3-cj .cjbg .f3-icon4{
+        width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 30px;
+    left: 474px;
+}
+.fo3-cj .cjbg .f3-icon5{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 167px;
+    left: 79px;
+}
+.fo3-cj .cjbg .f3-icon6{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 167px;
+    left: 396px;
+}
+.fo3-cj .cjbg .f3-icon7{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 303px;
+    left: 0px;
+}
+.fo3-cj .cjbg .f3-icon8{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 303px;
+    left: 158px;
+}
+.fo3-cj .cjbg .f3-icon9{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 303px;
+    left: 316px;
+}
+.fo3-cj .cjbg .f3-icon10{
+    width: 154px;
+    height: 116px;
+    position: absolute;
+    top: 303px;
+    left: 474px;
+}
+.fo3-cj .cjbg .cj-btn{
+    width: 156px;
+    height: 148px;
+    position: absolute;
+    top: 156px;
+    left: 237px;
+}
+
+.fo3-cj .pic{
+    display: block;
+    margin: 0 auto;
+}
+
+.fo3-cj .txt{
+    font-size: 12px;
+    color: #2c2c2b;
+    text-align: center;
+    line-height: 15px;
+    padding-top: 5px;
+}
+
+.fo3-cj .cjbg .cj-btn .cj-txt{
+    font-size: 14px;
+    color: #2c2c2b;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.fo3-cj .cjbg .cj-btn .new-cj1{
+        width: 114px;
+    height: 30px;
+    font-size: 18px;
+    color: #ffb301;
+    background: #2c2c2b;
+    border-radius: 20px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    margin: 10px auto 10px;
+}
+
+.fo3-cj .cjbg .cj-btn .new-cj2{
+    width: 114px;
+    height: 30px;
+    font-size: 18px;
+    color: #ffb301;
+    background: #2c2c2b;
+    border-radius: 20px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 auto;
+}

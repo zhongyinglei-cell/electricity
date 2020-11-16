@@ -1,0 +1,19 @@
+{%  extends 'base.html' %}
+{%  block content %}
+{#<h1>hello {{ user }}</h1>#}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{ user.avatar_url }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ user.login }}</h5>
+                    <p class="card-text">{{ user.login }}的github</p>
+                    <a href="{{ user.html_url }}" class="btn btn-primary">访问</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
