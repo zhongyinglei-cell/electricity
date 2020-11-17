@@ -60,10 +60,12 @@ def zhuce(request):
             msg = '请输入电子邮件'
             return render(request, 'zhuce.html', {'msg': msg})
         else:
-            us_list = []
-            for i in range(len(User.objects.all())):
-                us_list.append(User.objects.all()[i].username)
-            if username in us_list:
+            # us_list = []
+            # for i in range(len(User.objects.all())):
+            #     us_list.append(User.objects.all()[i].username)
+            user = User.objects.filter(username=username)
+            # if username in us_list:
+            if user:
                 msg = '已存在用户'
                 return render(request, 'zhuce.html', {'msg': msg})
             else:
