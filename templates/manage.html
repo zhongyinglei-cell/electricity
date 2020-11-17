@@ -4,9 +4,87 @@
     <meta charset="UTF-8">
     <title>个人中心</title>
 </head>
+<link rel="stylesheet" href="/static/css/manage.css">
 <body>
-<h1>manage</h1>
-user:{{ user }}
-<a href="/logout/">logout</a>
+{% extends 'index.html' %}
+{% block  content %}
+<ul class="ibx-header-app clr">
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-title ibx-hai-tool">工具</div>
+                </li>
+                <li class="ibx-header-app-item clr">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;sousuo&quot;}" target="_blank" href="http://www.baidu.com?fr=ibaidu">搜索</a></span>
+                    <span class="ibx-hai-link"><a href="/my/collect">收藏</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;wangpan&quot;}" target="_blank" href="http://pan.baidu.com/disk/home?fr=ibaidu">云盘</a></span>
+                    <span class="ibx-hai-link"><a href="/my/cal">日历</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;fanyi&quot;}" target="_blank" href="http://fanyi.baidu.com?fr=ibaidu">翻译</a></span>
+                </li>
+
+
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-space"></div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-title ibx-hai-sns">社区</div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;tieba&quot;}" target="_blank" href="http://tieba.baidu.com/home/main?un=great没机会&amp;fr=ibaidu&amp;ie=utf-8">贴吧</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;baike&quot;}" target="_blank" href="http://baike.baidu.com/usercenter?fr=ibaidu">百科</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;zhidao&quot;}" target="_blank" href="http://zhidao.baidu.com/uhome?fr=ibaidu">知道</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;wenku&quot;}" target="_blank" href="http://wenku.baidu.com/user/index?fr=ibaidu">文库</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;jingyan&quot;}" target="_blank" href="http://jingyan.baidu.com/user/nuc">经验</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-space"></div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-title ibx-hai-life">生活</div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;ditu&quot;}" target="_blank" href="http://map.baidu.com?fr=ibaidu">地图</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;licai&quot;}" target="_blank" href="https://licai.baidu.com/user/0/center/0?fr=ibaidu">理财</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;baifubao&quot;}" target="_blank" href="http://baifubao.baidu.com/jump?uri=/user/0/my_bfb/0&amp;fr=ibaidu">钱包</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-space"></div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-title ibx-hai-fun">娱乐</div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;news&quot;}" target="_blank" href="http://news.baidu.com?fr=ibaidu">新闻</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;music&quot;}" target="_blank" href="http://play.baidu.com/?fr=ibaidu">音乐</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;video&quot;}" target="_blank" href="http://video.baidu.com">视频</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;game&quot;}" target="_blank" href="http://sgame.baidu.com">游戏</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-space"></div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <div class="ibx-hai-title ibx-hai-v">诚信</div>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;baozhang&quot;}" target="_blank" href="http://baozhang.baidu.com/guarantee?fr=ibaidu">网民权益保障</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;koubei&quot;}" target="_blank" href="http://koubei.baidu.com/truth/wall">口碑</a></span>
+                </li>
+                <li class="ibx-header-app-item">
+                    <span class="ibx-hai-link"><a href="javascript:;">&nbsp;</a></span>
+                    <span class="ibx-hai-link"><a data-click="{&quot;act&quot;:&quot;jubao&quot;}" href="/my/jubao">举报</a></span>
+                </li>
+            </ul>
+<script src="/static/JS/jquery-1.11.0.min.js"></script></body>
 </body>
 </html>
+{% endblock %}

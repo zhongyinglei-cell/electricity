@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
+{% extends 'base.html' %}
+{% block content %}
 <body>
     <form method="POST" action="">
         <div id="login-box">
@@ -27,6 +29,8 @@
                 </div>
             </div>
             <button>login</button>
+            <div style="margin-left: 50%"><a style="color: #ffffff" href="/zhuce/">注册</a></div>
+
         </div>
     </form>
 </body>
@@ -39,3 +43,4 @@
     }
 </script>
 </html>
+{% endblock %}

@@ -1,7 +1,5 @@
 from django.conf.urls import url
-
 from prjectApp import views
-
 
 urlpatterns = [
     url(r'^login/',views.login,name="login"),
@@ -13,5 +11,5 @@ urlpatterns = [
     url(r'^logout/',views.logout,name='logout'),
     url(r'^choujiang/',views.choujiang,name='choujiang'),
     url(r'^chongzhi/', views.chongzhi, name='chongzhi'),
-
+    url(r'^zhuce/', views.zhuce, name='zhuce'),
 ]
